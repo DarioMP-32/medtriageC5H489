@@ -7,7 +7,7 @@ public class CrearCitaDTO {
     private Long doctorid;
     private String motivoconsulta;
     private BigDecimal montoconsulta;
-    private String estado;
+    private String nivelPrioridad;
 
 
     public CrearCitaDTO() {
@@ -15,12 +15,12 @@ public class CrearCitaDTO {
 
 
     public CrearCitaDTO(Long pacienteid, Long doctorid, String motivoconsulta, BigDecimal montoconsulta,
-            String estado) {
+            String nivelPrioridad) {
         this.pacienteid = pacienteid;
         this.doctorid = doctorid;
         this.motivoconsulta = motivoconsulta;
         this.montoconsulta = montoconsulta;
-        this.estado = estado;
+        this.nivelPrioridad = nivelPrioridad;
     }
 
 
@@ -64,16 +64,15 @@ public class CrearCitaDTO {
     }
 
 
-    public String getEstado() {
-        return estado;
+    public String getNivelPrioridad() {
+        return nivelPrioridad;
     }
 
 
-    public void setEstado(String estado) {
-        this.estado = estado;
+    public void setNivelPrioridad(String nivelPrioridad) {
+        this.nivelPrioridad = nivelPrioridad;
     }
 
-    
 
     
 }
