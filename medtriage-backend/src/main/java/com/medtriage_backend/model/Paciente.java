@@ -18,15 +18,14 @@ public class Paciente {
     @Column(name = "identificacion", nullable = false)
     private String identificacion;
 
-    @Column(name = "nombre_completo", nullable = false)
-    private String nombre_completo;
+    @Column(name = "nombrecompleto", nullable = false)
+    private String nombrecompleto;
 
     @Column(name = "correo", nullable = false)
     private String correo;
 
     @Column(name = "telefono", nullable = false)
     private String telefono;
-
 
     public Paciente() {
     }
@@ -47,12 +46,12 @@ public class Paciente {
         this.identificacion = identificacion;
     }
 
-    public String getNombre_completo() {
-        return nombre_completo;
+    public String getNombrecompleto() {
+        return nombrecompleto;
     }
 
-    public void setNombre_completo(String nombre_completo) {
-        this.nombre_completo = nombre_completo;
+    public void setNombrecompleto(String nombrecompleto) {
+        this.nombrecompleto = nombrecompleto;
     }
 
     public String getCorreo() {
@@ -70,5 +69,4 @@ public class Paciente {
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
-
 }

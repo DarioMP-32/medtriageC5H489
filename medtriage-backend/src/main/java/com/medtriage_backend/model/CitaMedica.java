@@ -1,17 +1,23 @@
 package com.medtriage_backend.model;
 
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
+
 @Entity
 @Table(name = "cita_medica")
 public class CitaMedica {
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,11 +26,13 @@ public class CitaMedica {
     @Column(name = "codigocita", nullable = false, unique = true, length = 30)
     private String codigocita;
 
-    @Column(name = "pacienteid", nullable = false)
-    private Long pacienteid;
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "pacienteid", nullable = false)
+    private Paciente paciente;
 
-    @Column(name = "doctorid", nullable = false)
-    private Long doctorid;
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "doctorid", nullable = false)
+    private Doctor doctor;
 
     @Column(name = "nivelprioridad", nullable = false)
     private String nivelprioridad;
@@ -41,8 +49,12 @@ public class CitaMedica {
     @Column(name = "fechacita", nullable = false)
     private LocalDateTime fechacita;
 
+
+
     public CitaMedica() {
     }
+
+
 
     public Long getId() {
         return id;
@@ -60,20 +72,20 @@ public class CitaMedica {
         this.codigocita = codigocita;
     }
 
-    public Long getPacienteid() {
-        return pacienteid;
+    public Paciente getPaciente() {
+        return paciente;
     }
 
-    public void setPacienteid(Long pacienteid) {
-        this.pacienteid = pacienteid;
+    public void setPaciente(Paciente paciente) {
+        this.paciente = paciente;
     }
 
-    public Long getDoctorid() {
-        return doctorid;
+    public Doctor getDoctor() {
+        return doctor;
     }
 
-    public void setDoctorid(Long doctorid) {
-        this.doctorid = doctorid;
+    public void setDoctor(Doctor doctor) {
+        this.doctor = doctor;
     }
 
     public String getNivelprioridad() {

@@ -58,5 +58,4 @@ public class Doctor {
     public void setDisponible(boolean disponible) {
         this.disponible = disponible;
     }
-
 }
